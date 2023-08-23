@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-0RS9QGYLJ3"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-0RS9QGYLJ3');
+	</script>
+    <meta charset="UTF-8">
+    <title>WMS Time</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Polar Vortex" />
+    <meta name="keywords" content="polar vortex,cluster,animation,layer,selection,animate,animated clusters,openlayers" />
+    
+    <!-- android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="translucent-black">
+  
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+  
+    <!-- Pointer events polyfill for old browsers, see https://caniuse.com/#feat=pointer -->
+    <style>
+      .slidecontainer {
+        width: 300px;
+        margin-bottom: -20px;
+        margin-left: 10px;
+        z-index: 100px;
+        position: relative;
+      }
+      .slider {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 15px;
+        border-radius: 5px;
+        background: #d3d3d3;
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+      }
+      .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background:     #00008B;
+        cursor: pointer;
+      }
+      .slider::-moz-range-thumb {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: #4CAF50;
+        cursor: pointer;
+      }
+      .map {
+        width: 100%;
+        height:400px;
+        position: relative;
+      }
+      .controls{
+        width: 100%;
+        height: 69px;
+      }
+      .center {
+        padding: 70px 0;
+        border: 3px solid green;
+        text-align: center;
+      }
+      #button1 {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        z-index:10000; 
+      }
+      #legend {
+        position: absolute;
+        top: 50px;
+        right: 10px;
+        z-index:10000; 
+        width:69px; 
+        height:100px; 
+        }
+      #invisDate{
+          opacity: 0;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="center"> 
+      <H1>2019 Polar Vortex</H1><br>
+      <H3>This map and stream histogram graph displays timeseries radar data and sentiment analysis of geolocated tweets on January 29th from 18:45 until 20:00.</H3><br>
+      <p>The 2019 Polar Vortex was a winter event that brought an intense snow storm to much of the upper midwest, followed by a period of frigid cold temperatures. This was caused by a weakened jet stream around the arctic and brought some of the lowest temperatures to areas in decades. Once the temperatures warmed up, widespread flooding ensued, particularly along the Mississippi River. <a href="https://en.wikipedia.org/wiki/January%E2%80%93February_2019_North_American_cold_wave">Wiki Link</a>
+      </p>
+    </div>
+    </br>
+    <div class="center" height="500px" width="100%" position="absolute">
+      <img src="./data/Histogram.png" width="100%">
+    </div>
+    </br>
+    <div class="center" height="500px" width="100%" position="absolute">
+      <img src="./data/Breaks.png" width="100%">
+    </br>
+    <p>Credit to the <a href="https://github.com/carsonfarmer/streamhist">StreamHist</a> package by Dr. Farmer.
+    </p>
+    </div>
+    <br>
+    <div id=invisDate>
+      <span id="date_value"></span>
+    </div>
+    <div class="slidecontainer">
+      <h3>Timeslider</h3>
+      <input type="range" min="0" max="2" value="0" class="slider" id="myRange">
+      <p>Date: <span id="date_sub"></span></p></br>
+      <p>Time: <span id="time_sub"></span></p></br>
+    </div>
+    </br>
+    <div id="map" class="map">
+      <div id="button1" class="button1">
+        <button onclick="e()" id="button_change" style="height:42.0px; width:69px">Hide Legend</button>
+      </div>
+      <div id="legend">
+        <img src="./polar_radar_legend.png" height="100px" width="69px">
+      </div>
+    </div>
+    <script src="main.js" type="module"></script>
+  </body>
+</html>
