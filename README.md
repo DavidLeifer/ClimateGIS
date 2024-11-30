@@ -11,7 +11,6 @@ A pipeline for GIS climate raster data. A script of scripts, using GCP.</br>
 + [Features](#features)
 + [Used Libraries](#used-libraries)
 + [TODO](#todo)
-+ [GeoStreamable](#geostreamable)
 
 ### Support ClimateGIS
 * Star and fork it on GitHub
@@ -70,7 +69,7 @@ By manipulating such Python libraries as Rasterio, GDAL, Geopandas, SciPy, Numpy
   * NumPy: https://github.com/numpy/numpy
   * SeaBorn: https://github.com/mwaskom/seaborn
   * StreamHist: https://github.com/carsonfarmer/streamhist
-  * Xarray: http://xarray.pydata.org/en/stable/
+  * Xarray: https://xarray.pydata.org/en/stable/
 - R
   * Prism: https://github.com/ropensci/prism
 - JavaScript
